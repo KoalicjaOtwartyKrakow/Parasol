@@ -1,24 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Parasol" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nKK-7Z-S1d"/>
+                        <viewControllerLayoutGuide type="bottom" id="CeL-6g-mIF"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJW-Dt-Vzc">
+                                <rect key="frame" x="44" y="564.5" width="326" height="60"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="t3C-2H-nXt"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="CHCĘ ZAPROPONOWAĆ LOKAL">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="lokalBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A7w-8T-t3V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXZ-3Q-PFq">
+                                <rect key="frame" x="44" y="642.5" width="326" height="60"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="odp-Rl-EWR"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="JESTEM KOORDYNATOREM">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="koordynatorBrtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vWq-lN-FBh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnU-kR-EyT">
+                                <rect key="frame" x="44" y="720.5" width="326" height="60"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="lrI-ja-2uS"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="POBIERZ WZÓR UMOWY UDOSTĘPNIENIA LOKALU">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="formularzBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rh0-43-4Bk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKi-le-lbY">
+                                <rect key="frame" x="44" y="422" width="326" height="124.5"/>
+                                <mutableString key="text">Jeśli masz możliwość udostępnienia lokalu mieszkalnego osobie lub rodzinie z Ukrainy, prosimy o wypełnienie formularza. Jeśli masz ograniczenia co do tego kogo możesz przyjąć (np. ludzie ze zwierzętami domowymi), zaznacz to proszę w opisie lokalu. Dziękujemy!  #KoalicjaOtwartyKrakow</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapa" translatesAutoresizingMaskIntoConstraints="NO" id="nJD-dP-nVd">
+                                <rect key="frame" x="12" y="62" width="390" height="324"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="324" id="5JF-Ca-Ee5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wXZ-3Q-PFq" firstAttribute="trailing" secondItem="KJW-Dt-Vzc" secondAttribute="trailing" id="2fQ-4H-sOa"/>
+                            <constraint firstItem="nJD-dP-nVd" firstAttribute="top" secondItem="nKK-7Z-S1d" secondAttribute="bottom" constant="18" id="5HY-5s-IBo"/>
+                            <constraint firstItem="nJD-dP-nVd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="5uM-pf-w5a"/>
+                            <constraint firstItem="wXZ-3Q-PFq" firstAttribute="top" secondItem="KJW-Dt-Vzc" secondAttribute="bottom" constant="18" id="83g-ri-duV"/>
+                            <constraint firstItem="fnU-kR-EyT" firstAttribute="leading" secondItem="KJW-Dt-Vzc" secondAttribute="leading" id="ARe-Fa-YLJ"/>
+                            <constraint firstItem="KJW-Dt-Vzc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="BdB-PJ-TRb"/>
+                            <constraint firstItem="sKi-le-lbY" firstAttribute="top" secondItem="nJD-dP-nVd" secondAttribute="bottom" constant="36" id="J9V-TP-sMN"/>
+                            <constraint firstItem="wXZ-3Q-PFq" firstAttribute="leading" secondItem="KJW-Dt-Vzc" secondAttribute="leading" id="NbT-IX-D25"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KJW-Dt-Vzc" secondAttribute="trailing" constant="24" id="NyU-AG-WHg"/>
+                            <constraint firstItem="fnU-kR-EyT" firstAttribute="top" secondItem="wXZ-3Q-PFq" secondAttribute="bottom" constant="18" id="TSG-GG-3W4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sKi-le-lbY" secondAttribute="trailing" constant="24" id="Ytz-iI-JiV"/>
+                            <constraint firstItem="KJW-Dt-Vzc" firstAttribute="top" secondItem="sKi-le-lbY" secondAttribute="bottom" constant="18" id="atp-nr-5gt"/>
+                            <constraint firstAttribute="trailing" secondItem="nJD-dP-nVd" secondAttribute="trailing" constant="12" id="bzk-OA-a6P"/>
+                            <constraint firstItem="fnU-kR-EyT" firstAttribute="trailing" secondItem="KJW-Dt-Vzc" secondAttribute="trailing" id="cco-yj-lf4"/>
+                            <constraint firstItem="sKi-le-lbY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="ctF-Jh-hon"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-271.01449275362319" y="95.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mapa" width="354.5" height="324"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		02564DFB27CA4898001CAE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02564DFA27CA4898001CAE42 /* AppDelegate.swift */; };
-		02564DFD27CA4898001CAE42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02564DFC27CA4898001CAE42 /* SceneDelegate.swift */; };
 		02564DFF27CA4898001CAE42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02564DFE27CA4898001CAE42 /* ViewController.swift */; };
 		02564E0227CA4898001CAE42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02564E0027CA4898001CAE42 /* Main.storyboard */; };
 		02564E0427CA489E001CAE42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02564E0327CA489E001CAE42 /* Assets.xcassets */; };
@@ -16,6 +15,16 @@
 		02564E1227CA489E001CAE42 /* ParasolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02564E1127CA489E001CAE42 /* ParasolTests.swift */; };
 		02564E1C27CA489E001CAE42 /* ParasolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02564E1B27CA489E001CAE42 /* ParasolUITests.swift */; };
 		02564E1E27CA489E001CAE42 /* ParasolUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02564E1D27CA489E001CAE42 /* ParasolUITestsLaunchTests.swift */; };
+		02564E2C27CA48E1001CAE42 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02564E2B27CA48E1001CAE42 /* MapKit.framework */; };
+		02564E2E27CA48E8001CAE42 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02564E2D27CA48E8001CAE42 /* CoreLocation.framework */; };
+		02B3D69A27CAE8BD00BC5F0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3D69927CAE8BD00BC5F0E /* SceneDelegate.swift */; };
+		02B3D69D27CAE99D00BC5F0E /* LokalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3D69B27CAE99D00BC5F0E /* LokalViewController.swift */; };
+		02B3D69E27CAE99D00BC5F0E /* LokalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B3D69C27CAE99D00BC5F0E /* LokalViewController.xib */; };
+		02B3D6A027CAF95700BC5F0E /* Chata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3D69F27CAF95700BC5F0E /* Chata.swift */; };
+		02B3D6A227CAFC3600BC5F0E /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3D6A127CAFC3600BC5F0E /* RequestHandler.swift */; };
+		02B3D6A427CAFD1C00BC5F0E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3D6A327CAFD1B00BC5F0E /* DataController.swift */; };
+		02B3D6A627CAFD7A00BC5F0E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3D6A527CAFD7A00BC5F0E /* Reachability.swift */; };
+		02B3D6A827CAFEDB00BC5F0E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3D6A727CAFEDB00BC5F0E /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +47,6 @@
 /* Begin PBXFileReference section */
 		02564DF727CA4898001CAE42 /* Parasol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parasol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02564DFA27CA4898001CAE42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		02564DFC27CA4898001CAE42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		02564DFE27CA4898001CAE42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		02564E0127CA4898001CAE42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02564E0327CA489E001CAE42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +57,16 @@
 		02564E1727CA489E001CAE42 /* ParasolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParasolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02564E1B27CA489E001CAE42 /* ParasolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParasolUITests.swift; sourceTree = "<group>"; };
 		02564E1D27CA489E001CAE42 /* ParasolUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParasolUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		02564E2B27CA48E1001CAE42 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		02564E2D27CA48E8001CAE42 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		02B3D69927CAE8BD00BC5F0E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		02B3D69B27CAE99D00BC5F0E /* LokalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LokalViewController.swift; sourceTree = "<group>"; };
+		02B3D69C27CAE99D00BC5F0E /* LokalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LokalViewController.xib; sourceTree = "<group>"; };
+		02B3D69F27CAF95700BC5F0E /* Chata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chata.swift; sourceTree = "<group>"; };
+		02B3D6A127CAFC3600BC5F0E /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		02B3D6A327CAFD1B00BC5F0E /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		02B3D6A527CAFD7A00BC5F0E /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		02B3D6A727CAFEDB00BC5F0E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02564E2E27CA48E8001CAE42 /* CoreLocation.framework in Frameworks */,
+				02564E2C27CA48E1001CAE42 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +103,7 @@
 				02564E1027CA489E001CAE42 /* ParasolTests */,
 				02564E1A27CA489E001CAE42 /* ParasolUITests */,
 				02564DF827CA4898001CAE42 /* Products */,
+				02564E2A27CA48E1001CAE42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +120,20 @@
 		02564DF927CA4898001CAE42 /* Parasol */ = {
 			isa = PBXGroup;
 			children = (
+				02B3D6A527CAFD7A00BC5F0E /* Reachability.swift */,
+				02B3D69927CAE8BD00BC5F0E /* SceneDelegate.swift */,
 				02564DFA27CA4898001CAE42 /* AppDelegate.swift */,
-				02564DFC27CA4898001CAE42 /* SceneDelegate.swift */,
 				02564DFE27CA4898001CAE42 /* ViewController.swift */,
 				02564E0027CA4898001CAE42 /* Main.storyboard */,
 				02564E0327CA489E001CAE42 /* Assets.xcassets */,
 				02564E0527CA489E001CAE42 /* LaunchScreen.storyboard */,
 				02564E0827CA489E001CAE42 /* Info.plist */,
+				02B3D69B27CAE99D00BC5F0E /* LokalViewController.swift */,
+				02B3D69C27CAE99D00BC5F0E /* LokalViewController.xib */,
+				02B3D69F27CAF95700BC5F0E /* Chata.swift */,
+				02B3D6A127CAFC3600BC5F0E /* RequestHandler.swift */,
+				02B3D6A327CAFD1B00BC5F0E /* DataController.swift */,
+				02B3D6A727CAFEDB00BC5F0E /* Extensions.swift */,
 			);
 			path = Parasol;
 			sourceTree = "<group>";
@@ -125,6 +153,15 @@
 				02564E1D27CA489E001CAE42 /* ParasolUITestsLaunchTests.swift */,
 			);
 			path = ParasolUITests;
+			sourceTree = "<group>";
+		};
+		02564E2A27CA48E1001CAE42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02564E2D27CA48E8001CAE42 /* CoreLocation.framework */,
+				02564E2B27CA48E1001CAE42 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +270,7 @@
 			files = (
 				02564E0727CA489E001CAE42 /* LaunchScreen.storyboard in Resources */,
 				02564E0427CA489E001CAE42 /* Assets.xcassets in Resources */,
+				02B3D69E27CAE99D00BC5F0E /* LokalViewController.xib in Resources */,
 				02564E0227CA4898001CAE42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +296,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B3D6A427CAFD1C00BC5F0E /* DataController.swift in Sources */,
+				02B3D6A827CAFEDB00BC5F0E /* Extensions.swift in Sources */,
 				02564DFF27CA4898001CAE42 /* ViewController.swift in Sources */,
+				02B3D6A027CAF95700BC5F0E /* Chata.swift in Sources */,
+				02B3D6A227CAFC3600BC5F0E /* RequestHandler.swift in Sources */,
 				02564DFB27CA4898001CAE42 /* AppDelegate.swift in Sources */,
-				02564DFD27CA4898001CAE42 /* SceneDelegate.swift in Sources */,
+				02B3D69D27CAE99D00BC5F0E /* LokalViewController.swift in Sources */,
+				02B3D6A627CAFD7A00BC5F0E /* Reachability.swift in Sources */,
+				02B3D69A27CAE8BD00BC5F0E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +489,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,6 +518,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
