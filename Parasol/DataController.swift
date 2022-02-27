@@ -102,10 +102,48 @@ class DataController: NSObject, CLLocationManagerDelegate {
         
     }
     
+    func getContractUrl(handleCompletion: @escaping AppCompletionHandler ) {
+        
+        let requestObj = RequestHandler()
+        let url = self.contract
+        self.registerRequestHandler(requestObj, for:url)
+        
+        requestObj.get("contract", url: url, allowUIAnimations: false) {
+            (_ rUrl: String, _ code: Int, _ message: String, _ responseObj: AnyObject?) in
+            
+            if code.isSuccess {
+                
+            }else{
+                
+            }
+            
+            handleCompletion(rUrl, code, message, responseObj as AnyObject?)
+        }
+    }
+    
+    func getStats(handleCompletion: @escaping AppCompletionHandler ) {
+        
+        let requestObj = RequestHandler()
+        let url = self.count
+        self.registerRequestHandler(requestObj, for:url)
+        
+        requestObj.get("count", url: url, allowUIAnimations: false) {
+            (_ rUrl: String, _ code: Int, _ message: String, _ responseObj: AnyObject?) in
+            
+            if code.isSuccess {
+                
+            }else{
+                
+            }
+            
+            handleCompletion(rUrl, code, message, responseObj as AnyObject?)
+        }
+    }
+    
     func getAll(handleCompletion: @escaping AppCompletionHandler ) {
         
         let requestObj = RequestHandler()
-        let url = "https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com/dev/apartments"
+        let url = self.get
         self.registerRequestHandler(requestObj, for:url)
         
         requestObj.get("all", url: url, allowUIAnimations: false) {
@@ -123,7 +161,7 @@ class DataController: NSObject, CLLocationManagerDelegate {
     
     func sendNewChataWith(params: Dictionary<String, Any>, handleCompletion: @escaping AppDataCompletionHandler) {
         let requestObj = RequestHandler()
-        let url = "https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com/dev/apartments"
+        let url = self.post
         self.registerRequestHandler(requestObj, for:url)
         
         requestObj.post("chata post", url: url, allowUIAnimations: false, parameters: params) {
@@ -141,7 +179,7 @@ class DataController: NSObject, CLLocationManagerDelegate {
     
     func sendChataUpdateWith(params: Dictionary<String, Any>, handleCompletion: @escaping AppDataCompletionHandler) {
         let requestObj = RequestHandler()
-        let url = "https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com/dev/apartments"
+        let url = self.post
         self.registerRequestHandler(requestObj, for:url)
         
         requestObj.put("chata update", url: url, allowUIAnimations: false, parameters: params) {
