@@ -23,44 +23,46 @@ class ViewController: UIViewController {
     }
     
     @IBAction func koordynatorBrtnPressed(_ sender: Any) {
-        
-        /*
-        DC.getAll {
-            url, code, message, responseObj in
-            
-            if code.isSuccess {
-                do{
-                    let chatas = try JSONDecoder().decode([Chata].self, from: responseObj as! Data)
-                    DLog(chatas.count)
-                }catch{
-                    DLog(error)
-                }
+        if let url = URL(string: DC.wolontariusz) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
-            
         }
-         */
     }
     
     @IBAction func formularzBtnPressed(_ sender: Any) {
-        
+        getContract()
     }
     
     private func getMapData(){
-        DC.getAll {
+        DC.getStats(handleCompletion: {
             url, code, message, responseObj in
             
             if code.isSuccess {
-                do{
-                    let chatas = try JSONDecoder().decode([Chata].self, from: responseObj as! Data)
-                    DLog(chatas.count)
-                }catch{
-                    DLog(error)
-                }
+                
             }
-            
-        }
+        })
     }
     
-
+    private func getContract(){
+        DC.getContractUrl(handleCompletion: {
+            url, code, message, responseObj in
+            
+            if code.isSuccess {
+                if let urlString = String(data:(responseObj as! Data), encoding: .utf8) {
+                    if let url = URL(string: urlString.replacingOccurrences(of: "\"", with: "")) {
+                        if UIApplication.shared.canOpenURL(url) {
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        }
+                    }else{
+                        if let url = URL(string: urlString) {
+                            if UIApplication.shared.canOpenURL(url) {
+                                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                            }
+                        }
+                    }
+                }
+            }
+        })
+    }
 }
-

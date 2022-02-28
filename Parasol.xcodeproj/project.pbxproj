@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0202D43D27CC52D7005C50FB /* cc-icon-special-skills.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0202D43C27CC52D7005C50FB /* cc-icon-special-skills.ttf */; };
 		02564DFB27CA4898001CAE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02564DFA27CA4898001CAE42 /* AppDelegate.swift */; };
 		02564DFF27CA4898001CAE42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02564DFE27CA4898001CAE42 /* ViewController.swift */; };
 		02564E0227CA4898001CAE42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02564E0027CA4898001CAE42 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0202D43C27CC52D7005C50FB /* cc-icon-special-skills.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cc-icon-special-skills.ttf"; sourceTree = "<group>"; };
 		02564DF727CA4898001CAE42 /* Parasol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parasol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02564DFA27CA4898001CAE42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02564DFE27CA4898001CAE42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				02B3D6A127CAFC3600BC5F0E /* RequestHandler.swift */,
 				02B3D6A327CAFD1B00BC5F0E /* DataController.swift */,
 				02B3D6A727CAFEDB00BC5F0E /* Extensions.swift */,
+				0202D43C27CC52D7005C50FB /* cc-icon-special-skills.ttf */,
 			);
 			path = Parasol;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				02564E0727CA489E001CAE42 /* LaunchScreen.storyboard in Resources */,
 				02564E0427CA489E001CAE42 /* Assets.xcassets in Resources */,
 				02B3D69E27CAE99D00BC5F0E /* LokalViewController.xib in Resources */,
+				0202D43D27CC52D7005C50FB /* cc-icon-special-skills.ttf in Resources */,
 				02564E0227CA4898001CAE42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -466,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

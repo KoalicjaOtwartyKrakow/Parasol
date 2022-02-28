@@ -13,7 +13,7 @@ let DC = DataController.sharedInstance
 
 class DataController: NSObject, CLLocationManagerDelegate {
     
-    #if PROD
+    #if PRODUCTION
     let post = "https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com/prod/apartments"
     let get = "https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com/prod/apartments"
     let count = "https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com/prod/apartments/count"
@@ -24,6 +24,8 @@ class DataController: NSObject, CLLocationManagerDelegate {
     let count = "https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com/dev/apartments/count"
     let contract = "https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com/dev/doc/contract"
     #endif
+    
+    let wolontariusz = "https://easy-housing-volontires.auth.eu-west-1.amazoncognito.com/oauth2/authorize?client_id=38cr6bi1ntb3cj2mgdgbp85al9&response_type=token&scope=email+openid+phone&redirect_uri=parasol://"
     
     var reachability: Reachability? = Reachability()!
     let locationManager = CLLocationManager()
