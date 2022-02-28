@@ -10,6 +10,7 @@ import MapKit
 
 class ViewController: UIViewController {
     
+    var mapData : Any?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,14 @@ class ViewController: UIViewController {
             
             if code.isSuccess {
                 
+                if let data =  responseObj as? Data {
+                    
+                    do {
+                        self.mapData = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                    } catch let error {
+                        DLog(error.localizedDescription)
+                    }
+                }
             }
         })
     }

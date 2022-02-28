@@ -42,6 +42,8 @@ class LokalViewController: UIViewController, UIGestureRecognizerDelegate, UIText
     private var keyboardShown:Bool = false
     private var currentOffsetNeeded = 0.0
     
+    private var chata : Chata! = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -90,6 +92,7 @@ class LokalViewController: UIViewController, UIGestureRecognizerDelegate, UIText
             if keyboardShown {
                 return
             }
+            
             keyboardShown = true
         }
     }
@@ -112,6 +115,27 @@ class LokalViewController: UIViewController, UIGestureRecognizerDelegate, UIText
     
     @IBAction func sendBtnPressed(_ sender: Any) {
         hideKeybaord()
+        
+        chata = Chata()
+        chata.APT_NUM = flatNumberTF.text ?? ""
+        chata.CITY = cityTF.text ?? ""
+        chata.CNT_NAME = wojewodztwa(rawValue: stateTF.text ?? "")!
+        chata.DESCRIPTION = additionalInfoTV.text ?? ""
+        chata.LANDLORD_EMAIL = emailTF.text ?? ""
+        chata.LANDLORD_PHONE = telephoneTF.text ?? ""
+        chata.LANDLORD_NAME = nameTF.text ?? ""
+        chata.PLACES_NUM = Int(numOfPlacesTF.text ?? "") ?? 1
+        chata.ST_NAME = streetTF.text ?? ""
+        chata.ST_NUM = strNumberTF.text ?? ""
+        chata.ZIP = postalCodeTF.text ?? ""
+        
+        let params = chata.postDictionary()
+        DC.sendNewChataWith(params: params) {
+        (url, code, message, data) in
+            if code.isSuccess {
+                
+            }
+        }
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -129,6 +153,26 @@ class LokalViewController: UIViewController, UIGestureRecognizerDelegate, UIText
         self.offsetConstr.constant = -currentOffsetNeeded
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
+        }
+        
+        return true
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        currentOffsetNeeded = 400
+        
+        self.offsetConstr.constant = -currentOffsetNeeded
+        UIView.animate(withDuration: 0.2) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        let idx = textField.tag
+        
+        if idx < 10 {
+            self.view.viewWithTag(idx+1)?.becomeFirstResponder()
         }
         
         return true

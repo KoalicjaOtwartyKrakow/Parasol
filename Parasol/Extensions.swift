@@ -9,6 +9,13 @@ import Foundation
 import UIKit
 import CoreLocation
 
+extension Encodable {
+  var dictionary: [String: Any]? {
+    guard let data = try? JSONEncoder().encode(self) else { return nil }
+    return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: Any] }
+  }
+}
+
 extension Int {
     var isSuccess : Bool { return 200...299 ~= self }
 }
