@@ -92,9 +92,9 @@ class RequestHandler {
                 DLog(debugString)
                 
                 //Add HTTP Request Parameters
-                if let requestDict = requestParams {
+                if let requestDict = requestParams as? [String:Any] {
                     if headerfields["Content-Type"] == ContentType.form {
-                        request.httpBody = getFormData(requestDict)
+                        request.httpBody = requestDict.percentEncoded()
                     } else {
                         do {
                             request.httpBody = try JSONSerialization.data(withJSONObject: requestDict, options: .prettyPrinted)
@@ -189,15 +189,6 @@ class RequestHandler {
             }
         }
         return result
-    }
-
-    func getFormData(_ requestDict: Any) -> Data {
-        var postString: String = ""
-        for item in requestDict as! [String : String] {
-            let appendString = postString != "" ? "\(postString)&" : ""
-            postString = appendString + item.0 + "=" + item.1
-        }
-        return postString.data(using: .utf8)!
     }
     
     //MARK: - Activity Indicator

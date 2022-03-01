@@ -119,7 +119,7 @@ class LokalViewController: UIViewController, UIGestureRecognizerDelegate, UIText
         chata = Chata()
         chata.APT_NUM = flatNumberTF.text ?? ""
         chata.CITY = cityTF.text ?? ""
-        chata.CNT_NAME = wojewodztwa(rawValue: stateTF.text ?? "")!
+        chata.CNT_NAME = wojewodztwa(rawValue: stateTF.text?.lowercased() ?? "")!
         chata.DESCRIPTION = additionalInfoTV.text ?? ""
         chata.LANDLORD_EMAIL = emailTF.text ?? ""
         chata.LANDLORD_PHONE = telephoneTF.text ?? ""
