@@ -8,7 +8,9 @@
 import UIKit
 
 class LokalViewController: UIViewController, UIGestureRecognizerDelegate, UITextFieldDelegate, UITextViewDelegate {
-
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var titleLbl: UILabel!
     
     @IBOutlet weak var personalDataLbl: UILabel!
@@ -33,6 +35,9 @@ class LokalViewController: UIViewController, UIGestureRecognizerDelegate, UIText
     
     @IBOutlet weak var additionalInfoTV: UITextView!
     
+    @IBOutlet weak var additionalInfoPlaceholder: UILabel!
+    
+    
     @IBOutlet weak var sendBtn: UIButton!
     
     @IBOutlet weak var offsetConstr: NSLayoutConstraint!
@@ -46,6 +51,8 @@ class LokalViewController: UIViewController, UIGestureRecognizerDelegate, UIText
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width,  height: 175 + 24 + 221 + 24 + 222)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -68,6 +75,8 @@ class LokalViewController: UIViewController, UIGestureRecognizerDelegate, UIText
             tf.delegate = self
         }
         
+        additionalInfoTV.delegate = self
+        
         DC.getLocation()
     }
     
@@ -89,6 +98,10 @@ class LokalViewController: UIViewController, UIGestureRecognizerDelegate, UIText
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             
+            currentOffsetNeeded = keyboardSize.height
+            
+            animateKeybaord()
+            
             if keyboardShown {
                 return
             }
@@ -98,12 +111,19 @@ class LokalViewController: UIViewController, UIGestureRecognizerDelegate, UIText
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
+        
         if !keyboardShown {
             return
         }
         keyboardShown = false
         
-        self.offsetConstr.constant = 0
+        currentOffsetNeeded = 0
+        
+        animateKeybaord()
+    }
+    
+    func animateKeybaord(){
+        self.offsetConstr.constant = -currentOffsetNeeded
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
         }
@@ -140,31 +160,18 @@ class LokalViewController: UIViewController, UIGestureRecognizerDelegate, UIText
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
-        if allTextFields.firstIndex(of: textField)! < 3 {
-            currentOffsetNeeded = 0
-        }else if allTextFields.firstIndex(of: textField)! >= 3 &&
-                    allTextFields.firstIndex(of: textField)! < 9
-        {
-            currentOffsetNeeded = 200
-        }else{
-            currentOffsetNeeded = 400
-        }
-        
-        self.offsetConstr.constant = -currentOffsetNeeded
-        UIView.animate(withDuration: 0.2) {
-            self.view.layoutIfNeeded()
-        }
-        
         return true
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        currentOffsetNeeded = 400
-        
-        self.offsetConstr.constant = -currentOffsetNeeded
-        UIView.animate(withDuration: 0.2) {
-            self.view.layoutIfNeeded()
-        }
+        var f = textView.frame
+        f.origin.y = 540
+        self.scrollView.scrollRectToVisible(f, animated: true)
+    }
+    
+    
+    func textViewDidChange(_ textView: UITextView) {
+        additionalInfoPlaceholder.isHidden = textView.text.count > 0
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -174,6 +181,8 @@ class LokalViewController: UIViewController, UIGestureRecognizerDelegate, UIText
         if idx < 10 {
             self.view.viewWithTag(idx+1)?.becomeFirstResponder()
         }
+        
+        
         
         return true
     }
